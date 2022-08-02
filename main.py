@@ -12,20 +12,20 @@ def start(update, context):
     update.message.reply_text("Hello! THis bot will bypass the shortlinks and Generate Direct GDrive Link\nBot Developed by :- @DextiN_xD\nSupport @NetflixTudum")
     
 def support(update, context):
-   update.message.reply_text("""
+   update.message.reply_text("
    Only following sites' links are supported by me:
 | <code>gplinks</code> | <code>droplink.co</code> | <code>mdisk</code> |
-| ```adf.ly``` / ```fumacrom.com``` |
-| ```appdrive``` | ```sharer.pw``` | ```hubdrive``` |
-| ```rocklinks``` | ```ouo.press``` / ```ouo.io``` |
-| ```linkvertise.com``` |
-| ```sub2unlock.net``` / ```sub2unlock.com``` |
-| ```letsboost.net``` | ```ph.apps2app.com``` |
-| ```mboost.me | goo.gl | ```rekonise.com``` |
-| ```shortconnect.com``` | ```sub4unlock.com``` |
-| ```bit.ly``` | ```social-unlock.com``` |
-| ```shrto.ml``` | ```t.co``` | ```tinyurl.com``` |
-| ```ytsubme.com``` | ```boost.ink``` |""")
+| adf.ly / fumacrom.com |
+| appdrive | sharer.pw | hubdrive |
+| rocklinks | ouo.press / ouo.io |
+| linkvertise.com |
+| sub2unlock.net / sub2unlock.com |
+| letsboost.net | ph.apps2app.com |
+| mboost.me | goo.gl | rekonise.com |
+| shortconnect.com | sub4unlock.com |
+| bit.ly | social-unlock.com |
+| shrto.ml | t.co | tinyurl.com |
+| ytsubme.com | boost.ink |")
 
 def adf(update, context):
         zipk = context.args[0]
