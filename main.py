@@ -127,42 +127,6 @@ def rocklinks(update, context):
         zkm = open('2.txt', 'r').read()
         update.message.reply_text(f"{zkm}")
         
-@Bot.on_message(filters.command("bin"))
-async def bin(_, m: Message):
-    if len(m.command) < 2:
-        msg = await m.reply_text("Please Provide a Bin!\nEx:- `/bin 401658`")
-        await sleep(15)
-        await msg.delete()
-
-    else:
-        try:
-            mafia = await m.reply_text("processing...")
-            inputm = m.text.split(None, 1)[1]
-            bincode = 6
-            ask = inputm[:bincode]
-            req = requests.get(f"https://bins-su-api.vercel.app/api/{ask}").json()
-            res = req["result"]
-
-            if res == False:
-                return await mafia.edit("❌ #INVALID_BIN ❌\n\nPlease provide a valid bin.")
-            da = req["data"]
-            bi = da["bin"]
-            ve = da["vendor"]
-            ty = da["type"]
-            le = da["level"]
-            ban = da["bank"]
-            co = da["country"]
-            cc = da["countryInfo"]
-            nm = cc["name"]
-            em = cc["emoji"]
-            cod = cc["code"]
-            dial = cc["dialCode"]
-
-            mfrom = m.from_user.mention
-            caption = f"""
-    ╔ Valid :- `{res} ✅`\n╚ Bin :- `{bi}`\n\n╔ Brand :- `{ve}`\n╠ Type :- `{ty}`\n╚ Level :- `{le}`\n\n╔ Bank :- `{ban} ({co})`\n╠ Country :- `{nm} {em}`\n╠ Alpha2 :- `{cod}`\n╚ DialCode :- `{dial}`\n\n**↠ Checked By :-** {mfrom}\n**↠ __Bot By :-** [Denuwan](https://github.com/ImDenuwan/Bin-Checker-Bot)__
-    """
-            await mafia.edit(caption, disable_web_page_preview=True)
 
 updater = telegram.ext.Updater(TOKEN, use_context=True)
 disp = updater.dispatcher
