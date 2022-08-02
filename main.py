@@ -126,6 +126,15 @@ def rocklinks(update, context):
         update.message.reply_text(f"Done")
         zkm = open('2.txt', 'r').read()
         update.message.reply_text(f"{zkm}")
+        
+def bincheck(update, context):
+        zipk = context.args[0]
+        open('1.txt','w').write(zipk)
+        update.message.reply_text(f"⚡️⚡️ ADFLY LINK BYPASSING ⚡️⚡️")
+        os.system('python bincheck.py')
+        zkm = open('2.txt', 'r').read()
+        update.message.reply_text(f"Done")
+        update.message.reply_text(f"{zkm}")
 
 updater = telegram.ext.Updater(TOKEN, use_context=True)
 disp = updater.dispatcher
@@ -143,5 +152,6 @@ disp.add_handler(telegram.ext.CommandHandler("magic", magic))
 disp.add_handler(telegram.ext.CommandHandler("gp", gp))
 disp.add_handler(telegram.ext.CommandHandler("generick", generic))
 disp.add_handler(telegram.ext.CommandHandler("rocklinks", rocklinks))
+disp.add_handler(telegram.ext.CommandHandler("bincheck", bincheck))
 updater.start_polling()
 updater.idle()
