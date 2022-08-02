@@ -14,8 +14,8 @@ def start(update, context):
 def support(update, context):
    update.message.reply_text("""
    Only following sites' links are supported by me:
-| `gplinks` | `droplink.co` | `mdisk` |
-| adf.ly / fumacrom.com |
+| `gplinks` | `droplink.co` | **mdisk** |
+| adf.ly / <code>fumacrom.com</code> |
 | appdrive | sharer.pw | hubdrive |
 | rocklinks | ouo.press / ouo.io |
 | linkvertise.com |
