@@ -1,7 +1,7 @@
 import cloudscraper
 
 # Accepting MDisk URL from User
-url = input("Enter your MDisk URL : ")
+url = open('1.txt', 'r').read()
 
 def mdisk(url):
     api = "https://api.emilyx.in/api"
@@ -19,4 +19,8 @@ def mdisk(url):
     else:
         return res["msg"]
 
-print(mdisk(url=url))
+info = mdisk(url)
+
+
+print("❤️✨Mdisk LINK: "+ info + " ❤️✨" ,file=open("2.txt", "w"))
+print("Bypassed Successfully!")
