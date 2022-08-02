@@ -12,9 +12,9 @@ def start(update, context):
     update.message.reply_text("Hello! THis bot will bypass the shortlinks and Generate Direct GDrive Link\nBot Developed by :- @DextiN_xD\nSupport @NetflixTudum")
     
 def support(update, context):
-   update.message.reply_text("
+   update.message.reply_text("""
    Only following sites' links are supported by me:
-| <code>gplinks</code> | <code>droplink.co</code> | <code>mdisk</code> |
+| `gplinks` | `droplink.co` | `mdisk` |
 | adf.ly / fumacrom.com |
 | appdrive | sharer.pw | hubdrive |
 | rocklinks | ouo.press / ouo.io |
@@ -25,7 +25,7 @@ def support(update, context):
 | shortconnect.com | sub4unlock.com |
 | bit.ly | social-unlock.com |
 | shrto.ml | t.co | tinyurl.com |
-| ytsubme.com | boost.ink |")
+| ytsubme.com | boost.ink |""")
 
 def adf(update, context):
         zipk = context.args[0]
