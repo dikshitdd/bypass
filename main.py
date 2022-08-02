@@ -69,6 +69,14 @@ def adf(update, context):
         update.message.reply_text(f"Done")
         update.message.reply_text(f"{zkm}")
         
+def katdrive(update, context):
+        zipk = context.args[0]
+        open('1.txt','w').write(zipk)
+        update.message.reply_text(f"⚡️⚡️ MDISK LINK BYPASSING ⚡️⚡️")
+        os.system('python mdisk.py')
+        zkm = open('2.txt', 'r').read()
+        update.message.reply_text(f"{zkm}")
+        
 def generic(update, context):
         zipk = context.args[0]
         open('1.txt','w').write(zipk)
@@ -167,5 +175,6 @@ disp.add_handler(telegram.ext.CommandHandler("magic", magic))
 disp.add_handler(telegram.ext.CommandHandler("gp", gp))
 disp.add_handler(telegram.ext.CommandHandler("generick", generic))
 disp.add_handler(telegram.ext.CommandHandler("rocklinks", rocklinks))
+disp.add_handler(telegram.ext.CommandHandler("mdisk", mdisk))
 updater.start_polling()
 updater.idle()
