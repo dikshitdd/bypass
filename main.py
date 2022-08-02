@@ -11,54 +11,21 @@ TOKEN = environ.get('BOT_TOKEN')
 def start(update, context):
     update.message.reply_text("Hello! THis bot will bypass the shortlinks and Generate Direct GDrive Link\nBot Developed by :- @DextiN_xD\nSupport @NetflixTudum")
     
-def help(update, context):
+def support(update, context):
    update.message.reply_text("""
-   the following commands are available
-/start -> Welcome Message
-
-/help -> all helpful command list
-
-/adf -> bypass adf.ly link
-
-/droplink -> bypass droplink.co link
-
-/gp -> bypass gplink stinky url
-
-/rocklinks -> bypass rocklinks url
-
-/gdtot -> GDTOT links 
-
-/hubdrive -> HubDrive Links 
-
-/katdrive -> KatDrive Links 
-
-/kolop -> Kolop Links 
-
-/drivefire -> DriveFire Links 
-
-/magic -> AppDrive/DriveApp/GDFlix/DriveSharer/DriveLinks/DriveBit Links 
-
-/generic -> use this command for these services
-
-exe.io/exey.io
-sub2unlock.net/sub2unlock.com
-rekonise.com
-letsboost.net
-ph.apps2app.com
-mboost.me
-shortconnect.com
-sub4unlock.com
-ytsubme.com
-bit.ly
-social-unlock.com
-boost.ink
-goo.gl
-shrto.ml
-t.co
-tinyurl.com
-
-usage - commands{} link{https://...} (example --> /adf https://adf.ly/xyz)\n\n\nSupport @NetflixTudum
-   """)
+   Only following sites' links are supported by me:
+| ```gplinks``` | ```droplink.co``` | ```mdisk``` |
+| ```adf.ly``` / ```fumacrom.com``` |
+| ```appdrive``` | ```sharer.pw``` | ```hubdrive``` |
+| ```rocklinks``` | ```ouo.press``` / ```ouo.io``` |
+| ```linkvertise.com``` |
+| ```sub2unlock.net``` / ```sub2unlock.com``` |
+| ```letsboost.net``` | ```ph.apps2app.com``` |
+| ```mboost.me | goo.gl | ```rekonise.com``` |
+| ```shortconnect.com``` | ```sub4unlock.com``` |
+| ```bit.ly``` | ```social-unlock.com``` |
+| ```shrto.ml``` | ```t.co``` | ```tinyurl.com``` |
+| ```ytsubme.com``` | ```boost.ink``` |""")
 
 def adf(update, context):
         zipk = context.args[0]
@@ -163,7 +130,7 @@ def rocklinks(update, context):
 updater = telegram.ext.Updater(TOKEN, use_context=True)
 disp = updater.dispatcher
 disp.add_handler(telegram.ext.CommandHandler("start", start))
-disp.add_handler(telegram.ext.CommandHandler("help", help))
+disp.add_handler(telegram.ext.CommandHandler("support", support))
 disp.add_handler(telegram.ext.CommandHandler("adf", adf))
 disp.add_handler(telegram.ext.CommandHandler("mdisk", mdisk))
 disp.add_handler(telegram.ext.CommandHandler("droplink", droplink))
