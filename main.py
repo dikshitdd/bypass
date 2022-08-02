@@ -9,7 +9,7 @@ from urllib.parse import urlparse, parse_qs
 TOKEN = environ.get('BOT_TOKEN')
 
 def start(update, context):
-    update.message.reply_text("Hello folks! I will bypass the shortlinks and Generate Direct GDrive Link")
+    update.message.reply_text("Hello! THis bot will bypass the shortlinks and Generate Direct GDrive Link\nBot Developed by :- @DextiN_xD\nSupport @NetflixTudum")
     
 def help(update, context):
    update.message.reply_text("""
@@ -26,17 +26,17 @@ def help(update, context):
 
 /rocklinks -> bypass rocklinks url
 
-/gdtot -> GDTOT links (GDTOT CRYPT REQUIRED)
+/gdtot -> GDTOT links 
 
-/hubdrive -> HubDrive Links (HUBDRIVE CRYPT REQUIRED)
+/hubdrive -> HubDrive Links 
 
-/katdrive -> KatDrive Links (KATDRIVE CRYPT REQUIRED)
+/katdrive -> KatDrive Links 
 
-/kolop -> Kolop Links (KOLOP CRYPT REQUIRED)
+/kolop -> Kolop Links 
 
-/drivefire -> DriveFire Links (DRIVEFIRE CRYPT REQUIRED)
+/drivefire -> DriveFire Links 
 
-/magic -> AppDrive/DriveApp/GDFlix/DriveSharer/DriveLinks/DriveBit Links (Login required)
+/magic -> AppDrive/DriveApp/GDFlix/DriveSharer/DriveLinks/DriveBit Links 
 
 /generic -> use this command for these services
 
@@ -57,7 +57,7 @@ shrto.ml
 t.co
 tinyurl.com
 
-usage - commands{} link{https://...} (example -->/adf https://adf.ly/xyz)
+usage - commands{} link{https://...} (example -->/adf https://adf.ly/xyz)\n Support @NetflixTudum
    """)
 
 def adf(update, context):
