@@ -69,7 +69,7 @@ def adf(update, context):
         update.message.reply_text(f"Done")
         update.message.reply_text(f"{zkm}")
         
-def katdrive(update, context):
+def mdisk(update, context):
         zipk = context.args[0]
         open('1.txt','w').write(zipk)
         update.message.reply_text(f"⚡️⚡️ MDISK LINK BYPASSING ⚡️⚡️")
