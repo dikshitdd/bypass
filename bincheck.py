@@ -1,69 +1,84 @@
-# MODULES
-import requests
-from os import system as SYSS
-from sys import exit as EXT
+import os, requests, json, sys
+from time import sleep
+from huepy import *
 
-"""main checker"""
-class main(object):
+__version__ = "1.3.5"
 
-    """untuk mengecheck bin ada atau tidak"""
-    @classmethod
-    def check(cls, bins):
-        if bins == '':
-            EXT('[!] Bin not found!')
+API = "https://lookup.binlist.net/"
+
+def Bin_Info():
+
+
+    def banner():
+        print(purple("""
+                      .---.         ,,
+           ,,        /     \       ;,,'
+          ;, ;      (  o  o )      ; ;
+            ;,';,,,  \  \/ /      ,; ;
+        ,,,  ;,,,,;;,`   '-,;'''',,,'
+        ;,, ;,, ,,,,   ,;  ,,,'';;,,;''';
+            ;,,,;    ~~'  '';,,''',,;''''  
+                                        ''' 
+            GET INFORMATION ABOUT BIN \n"""))
+
+    
+    def clean():
+
+        if os.name == 'nt':
+
+            os.system('cls')
+
         else:
-            cls.main(bins)
 
-    """requests data json"""
-    @classmethod
-    def main(cls, x):
-        x = {
-            'author': 'DR4G0N5',
-            'url': 'https://bin-check-dr4g.herokuapp.com/api/'+x,
-            'version': '0.1.1'
-        }
-        req = requests.get(x['url'])
-        requests_json = req.json()
+            os.system('clear')
 
-        """untuk check binnya valid / tidak"""
-        if requests_json['result'] == 'false':
-            EXT('[!] Bin Error.')
-        else:
-            r = requests_json['data']
-            cls.main_check(r, x)
+    def main():
 
-    """pengeluaran data"""
-    @classmethod
-    def main_check(cls, r, xx):
-        full_data = r
+        clean() 
+        banner()
+        
+        try:
+            
+            BIN = input(red("   BIN > "))
+            clean(); banner()
 
-        """datanya"""
-        data = {
-            'Bin': full_data['bin'],
-            'Vendor': full_data['vendor'],
-            'Type': full_data['type'],
-            'Level': full_data['level'],
-            'Bank': full_data['bank'],
-            'Country': full_data['country']
-        }
-        print("""
- [+] Author: {}
- [+] Version: {}""".format(xx['author'],xx['version']))
-        print("""
- [+] Bin: {}
- [+] vendor: {}
- [+] Type: {}
- [+] Level: {}
- [+] Bank: {}
- [+] Country: {}""".format(data['Bin'],
- data['Vendor'],
- data['Type'],
- data['Level'],
- data['Bank'],
- data['Country']))
+            data = requests.get(API+BIN).json()
+            sys.stdout.flush()
 
-if __name__ == '__main__':
+            print(info(yellow("BIN INFORMATION " +red(BIN + "\n"))))
+            sleep(0.7)
+            print(good(red("[Country]: " +yellow(data['country']['name']))))
+            sleep(0.7)
+            print(good(red("[Sheme]: " +yellow(data['scheme']))))
+            sleep(0.7)
+            print(good(red("[Type]: " +yellow(data['type']))))
+            sleep(0.7)
+            print(good(red("[Brand]: " +yellow(data['brand']))))
+            sleep(0.7)
+            print(good(red("[Bank Name]: " +yellow(data['bank']['name']))))
+            sleep(0.7)
+            print(good(red("[Latitude]: " +yellow(data['country']['latitude']))))
+            sleep(0.7)
+            print(good(red("[Longitude]: " +yellow(data['country']['longitude']))))
+            sleep(0.7)
+            print(good(red("[Bank URL]: " +yellow(data['bank']['url']))))
+            sleep(0.7)
+            print(good(red("[Bank Phone]: " +yellow(data['bank']['phone']))))
+            sleep(0.7)
+            print(good(red("[Bank City]: " +yellow(data['bank']['city'] + "\n"))))
 
-    """pemanggil bin"""
-    BINS = input('[+] Bin: ')
-    main.check(BINS)
+        except:
+
+            print(bad(yellow("An Error Ocurred...")))
+            exit()
+
+    main()
+
+
+if __name__ == "__main__":
+
+    print(info(lightred(("An Error Ocurred..."))))
+
+else:
+
+    Bin_Info()
